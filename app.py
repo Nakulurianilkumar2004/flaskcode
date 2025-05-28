@@ -36,6 +36,9 @@ def store_user_details():
     except Exception as e:
         print(f"Error saving user: {e}")
         return jsonify({'error': 'Internal Server Error'}), 500
+@app.route('/')
+def home():
+    return "Flask API is running", 200
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))  # get port from env or default 5000
